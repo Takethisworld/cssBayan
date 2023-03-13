@@ -1,0 +1,171 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: steelblue;
+    font-family: 'Prata',sans-serif;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 80%;
+    margin:0 auto;
+}
+
+.title{
+    font-size: 2rem;
+text-align: center;
+margin: 1rem 0;
+}
+
+
+
+.list_container :hover{
+    cursor: pointer;
+}
+
+.list_item{
+    list-style: none;
+    width: 100%;
+    margin-bottom: .6rem ;
+    border-radius: 15px;
+    background-color:whitesmoke;
+    transition: 0.3s;
+    position: relative;
+}
+
+.label{
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.param {
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: 'Prata';
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.icon{
+    width: 25px;
+    height: 25px;
+    transition: 0.3s;
+    padding-right: 0.5rem;
+    transition: 0.3s;
+}
+
+
+.list_item-input{
+    display: none;
+}
+
+.img_cont{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    overflow: hidden;
+    transition: 0.3s;
+    height: 0;
+}
+
+.img {
+    padding: 1rem;
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.list_item:hover {
+    transition: all  0.5s ease-in-out;
+}
+
+.list_item-input:checked ~ .label > .img_cont{
+    width: 100%;
+    height:50% ;
+}
+
+.list_container  .list_item:hover  .label{
+    color: blue;
+    transition: all  0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.list_item-input:checked ~ .label>.param{
+    color: blue;
+}
+
+.list_item:hover .icon {
+    transform: rotate(-90deg);
+    transition: all  0.5s ease-in-out;
+    color: blue;
+}
+
+.list_item-input:checked ~ .label>.param>.icon{
+    color: blue;
+    transform: rotate(-90deg);
+}
+
+.list_container .list_item:hover .img_cont{
+    width: 100%;
+    height: 40%;
+    transition: all  0.5s ease-in-out; 
+}
+
+.list_item:hover >.label>.img_cont>.img{
+    animation-name: drop-img;
+    animation-duration: 0.5s;
+}
+
+.list_item:hover>.list_item-input:checked~ .label>.img_cont>.img{
+    animation: none;
+}
+
+@keyframes drop-img{
+    from{height: 0;}
+    to{height: 70%;}
+
+    from{width: 0;}
+    to{width: 70%;}
+}
+
+@media screen and (min-width:1156px) {
+    .title{
+        font-size: 3.8rem;
+    }
+
+    .label{
+        font-size: 1.8rem;
+    }
+}
+
+@media  screen and (max-width:820px) {
+    .list_container{
+        max-width: 60%;
+    }
+
+    .title{
+        font-size: 1.5rem;
+    }
+
+    .label .param{
+        font-size: 0.8rem;
+    }
+}
