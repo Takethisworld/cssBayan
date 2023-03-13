@@ -51,14 +51,15 @@ margin: 1rem 0;
     transition: color 0.3s;
 }
 
-.param .img_cont{
+.param {
     width: 100%;
     font-size: 1.2rem;
     font-weight: 400;
     font-family: 'Prata';
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
+
 
 .icon{
     width: 25px;
@@ -81,30 +82,34 @@ margin: 1rem 0;
     padding: 0.5rem;
     overflow: hidden;
     transition: 0.3s;
-    padding: 0.5rem;
-    overflow: hidden;
-    transition: 0.3s;
+    height: 0;
 }
 
-.img{
+.img {
+    padding: 1rem;
     width: 70%;
     height: 70%;
     object-fit: cover;
+    transition: 0.3s;
 }
 
 .list_item:hover {
-    transition: 0.3s;
+    transition: all  0.5s ease-in-out;
 }
 
+.list_item-input:checked ~ .label > .img_cont{
+    width: 100%;
+    height:50% ;
+}
 
 .list_container  .list_item:hover  .label{
-    transition: 0.3s;
+    transition: all  0.5s ease-in-out;
     cursor: pointer;
 }
 
 .list_item:hover .icon{
     transform: rotate(-90deg);
-    transition: 0.3s;
+    transition: all  0.5s ease-in-out;
     color: blue;
 }
 
@@ -114,23 +119,23 @@ margin: 1rem 0;
 
 .list_container .list_item:hover .img_cont{
     width: 100%;
-    max-height: 40%;
-    transition: 0.3s;
+    height: 40%;
+    transition: all  0.5s ease-in-out; 
 }
 
-.list_container:hover >label>.list_item-input>.img_cont>.img{
+.list_item:hover >.label>.img_cont>.img{
     animation-name: drop-img;
-    animation-duration: 0.3s;
+    animation-duration: 0.5s;
 }
 
-.list_container:hover>.list_item-input:checked~ .label>.img_cont>.img{
+.list_item:hover>.list_item-input:checked~ .label>.img_cont>.img{
     animation: none;
 }
 
 @keyframes drop-img{
-    from{max-height: 0;}
-    to{max-height: 70%;}
+    from{height: 0;}
+    to{height: 70%;}
 
-    from{max-width: 0;}
-    to{max-width: 70%;}
+    from{width: 0;}
+    to{width: 70%;}
 }
