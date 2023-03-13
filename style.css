@@ -103,17 +103,23 @@ margin: 1rem 0;
 }
 
 .list_container  .list_item:hover  .label{
+    color: blue;
     transition: all  0.5s ease-in-out;
     cursor: pointer;
 }
 
-.list_item:hover .icon{
+.list_item-input:checked ~ .label>.param{
+    color: blue;
+}
+
+.list_item:hover .icon {
     transform: rotate(-90deg);
     transition: all  0.5s ease-in-out;
     color: blue;
 }
 
 .list_item-input:checked ~ .label>.param>.icon{
+    color: blue;
     transform: rotate(-90deg);
 }
 
