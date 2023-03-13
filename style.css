@@ -67,6 +67,7 @@ margin: 1rem 0;
     height: 25px;
     transition: 0.3s;
     padding-right: 0.5rem;
+    transition: 0.3s;
 }
 
 .list_item:hover{
@@ -91,7 +92,18 @@ margin: 1rem 0;
 }
 
 .img{
-    width: 500px;
-    height: 500px;
+    width: 70%;
+    height: 70%;
     object-fit: cover;
+}
+
+.list_container  .list_item:hover  .label{
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.list_item:hover .icon{
+    transform: rotate(-90deg);
+    transition: 0.3s;
+    color: blue;
 }
